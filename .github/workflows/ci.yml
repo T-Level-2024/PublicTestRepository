@@ -26,11 +26,3 @@ jobs:
                 python -m unittest discover tests > test_results.log || exit 1
             - name: Show test results
               run: cat test_results.log
-            - name: Check test results
-              run: |
-                if grep -q "FAILED" test_results.log; then
-                    echo "Some test cases failed. Check the log above.";
-                    exit 1;
-                else
-                    echo "All test cases passed successfully!";
-                    exit 1;

@@ -23,6 +23,6 @@ jobs:
                 pip install -r requirements.txt || echo "No requirements file found."
             - name: Run tests
               run: |
-                python -m unittest discover tests >> test_results.txt || exit 1
+                python -m unittest discover tests >> test_results.log || exit 1
             - name: Show test results
-              run: cat test_results.txt
+              run: cat test_results.log
